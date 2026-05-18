@@ -7,21 +7,21 @@ export default function Home() {
 
       {/* HERO */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
-        {/* LOGO */}
+        {/* LOGO GRANDE */}
         <motion.img
-          src="/logo.png"
+          src="/logo.jpeg"
           alt="MK Audiovisual logo"
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="w-40 md:w-56 mb-8"
+          transition={{ duration: 1 }}
+          className="w-full max-w-4xl object-contain mb-10"
         />
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-6xl font-semibold tracking-tight"
+          className="text-3xl md:text-5xl font-semibold tracking-tight"
         >
           Producción audiovisual profesional
         </motion.h1>
@@ -112,17 +112,12 @@ export default function Home() {
 
         <div className="mt-10 text-gray-600 space-y-2">
           <p>📞 +34 636 893 279</p>
-        <p>
-  📸 Instagram: 
-  <a 
-    href="https://instagram.com/mk.audiovisual_" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="underline ml-1"
-  >
-    @mk.audiovisual_
-  </a>
-</p>
+          <p>
+            📸 Instagram: 
+            <a href="https://instagram.com/mk.audiovisual_" target="_blank" className="underline ml-1">
+              @mk.audiovisual_
+            </a>
+          </p>
         </div>
       </section>
 
