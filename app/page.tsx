@@ -123,8 +123,11 @@ export default function Home() {
           Contacto
         </motion.h2>
 
-        {/* FORMULARIO SEGURO */}
-        <form action="https://formspree.io/f/xxxxx" method="POST" className="space-y-6">
+        {/* FORMULARIO FORMSPREE */}
+        <form action="https://formspree.io/f/mzdwzpjr" method="POST" className="space-y-6">
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web" />
+
           <input type="text" name="name" placeholder="Nombre" required className="w-full p-3 border rounded-lg" />
           <input type="email" name="email" placeholder="Email" required className="w-full p-3 border rounded-lg" />
           <textarea name="message" placeholder="Cuéntame tu proyecto" required className="w-full p-3 border rounded-lg h-32" />
