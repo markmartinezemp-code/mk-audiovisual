@@ -6,67 +6,63 @@ export default function Home() {
     <main className="bg-white text-black font-sans">
 
       {/* HERO */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
-        {/* LOGO GRANDE */}
+      <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+
+        {/* LOGO FULL BACKGROUND */}
         <motion.img
           src="/logo.jpeg"
           alt="MK Audiovisual logo"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="w-full max-w-4xl object-contain mb-10"
+          initial={{ scale: 1.3, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.25 }}
+          transition={{ duration: 1.8 }}
+          className="absolute w-full h-full object-cover"
         />
 
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-semibold tracking-tight"
-        >
-          Producción audiovisual profesional
-        </motion.h1>
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-white/70" />
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-6 text-lg text-gray-600 max-w-xl"
-        >
-          Trabajo con empresas, marcas y proyectos independientes creando contenido visual moderno, elegante y adaptado a cada necesidad.
-        </motion.p>
+        {/* TEXTO ENCIMA */}
+        <div className="relative z-10 px-6 max-w-2xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="text-4xl md:text-6xl font-semibold tracking-tight"
+          >
+            Producción audiovisual profesional
+          </motion.h1>
 
-        <motion.a
-          href="#contacto"
-          whileHover={{ scale: 1.05 }}
-          className="mt-10 px-6 py-3 border border-black rounded-full text-sm hover:bg-black hover:text-white transition"
-        >
-          Contactar
-        </motion.a>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="mt-6 text-lg text-gray-700"
+          >
+            Desarrollo proyectos audiovisuales para empresas, marcas y clientes
+            individuales, combinando técnica, estética y narrativa visual.
+          </motion.p>
+
+          <motion.a
+            href="#contacto"
+            whileHover={{ scale: 1.05 }}
+            className="mt-10 inline-block px-6 py-3 border border-black rounded-full text-sm hover:bg-black hover:text-white transition"
+          >
+            Contactar
+          </motion.a>
+        </div>
       </section>
 
       {/* SOBRE MI */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-3xl md:text-4xl font-medium mb-10"
-        >
-          Sobre mí
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-gray-600 text-lg leading-relaxed"
-        >
+        <h2 className="text-3xl md:text-4xl font-medium mb-10">Sobre mí</h2>
+        <p className="text-gray-600 text-lg leading-relaxed">
           Soy operador de cámara, realizador, productor y técnico de vídeo.
-          Desarrollo proyectos audiovisuales con una combinación de técnica y creatividad,
-          adaptándome a todo tipo de producciones.
+          Trabajo en proyectos audiovisuales tanto en entornos broadcast como
+          en producciones para empresas y contenido digital.
 
-          Trabajo tanto en entornos broadcast como en proyectos para empresas,
-          contenido digital y producciones independientes, ofreciendo siempre
-          un resultado profesional y cuidado.
-        </motion.p>
+          Mi enfoque combina precisión técnica con una estética moderna,
+          adaptándome a cada proyecto para ofrecer resultados profesionales.
+        </p>
       </section>
 
       {/* SERVICIOS */}
@@ -75,7 +71,6 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-medium mb-12">Servicios</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-
             {["Grabación y Fotografía","Producción para empresas","Técnico broadcast"].map((item, i) => (
               <motion.div
                 key={i}
@@ -86,12 +81,11 @@ export default function Home() {
               >
                 <h3 className="text-xl font-medium mb-3">{item}</h3>
                 <p className="text-gray-600">
-                  Soluciones audiovisuales adaptadas a cada cliente,
-                  con enfoque profesional y estética moderna.
+                  Producciones audiovisuales adaptadas a cada cliente con enfoque
+                  profesional y estética actual.
                 </p>
               </motion.div>
             ))}
-
           </div>
         </div>
       </section>
@@ -113,8 +107,8 @@ export default function Home() {
         <div className="mt-10 text-gray-600 space-y-2">
           <p>📞 +34 636 893 279</p>
           <p>
-            📸 Instagram: 
-            <a href="https://instagram.com/mk.audiovisual_" target="_blank" className="underline ml-1">
+            📸 Instagram:
+            <a href="https://instagram.com/mk.audiovisual_" target="_blank" rel="noopener noreferrer" className="underline ml-1">
               @mk.audiovisual_
             </a>
           </p>
