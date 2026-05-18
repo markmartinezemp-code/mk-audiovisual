@@ -7,23 +7,32 @@ export default function Home() {
 
       {/* HERO */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        {/* LOGO */}
+        <motion.img
+          src="/logo.png"
+          alt="MK Audiovisual logo"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-40 md:w-56 mb-8"
+        />
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-semibold tracking-tight"
+          className="text-4xl md:text-6xl font-semibold tracking-tight"
         >
-          MK Audiovisual
+          Producción audiovisual profesional
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-6 text-lg md:text-xl text-gray-600 max-w-xl"
+          className="mt-6 text-lg text-gray-600 max-w-xl"
         >
-          Producción audiovisual moderna, elegante y profesional.
-          Especializado en imagen, narrativa y técnica.
+          Trabajo con empresas, marcas y proyectos independientes creando contenido visual moderno, elegante y adaptado a cada necesidad.
         </motion.p>
 
         <motion.a
@@ -51,12 +60,12 @@ export default function Home() {
           className="text-gray-600 text-lg leading-relaxed"
         >
           Soy operador de cámara, realizador, productor y técnico de vídeo.
-          Trabajo en proyectos audiovisuales aportando una visión estética cuidada,
-          técnica precisa y narrativa visual.
+          Desarrollo proyectos audiovisuales con una combinación de técnica y creatividad,
+          adaptándome a todo tipo de producciones.
 
-          Me especializo tanto en producciones broadcast como en proyectos
-          independientes, adaptándome a cada cliente para conseguir resultados
-          profesionales y modernos.
+          Trabajo tanto en entornos broadcast como en proyectos para empresas,
+          contenido digital y producciones independientes, ofreciendo siempre
+          un resultado profesional y cuidado.
         </motion.p>
       </section>
 
@@ -67,7 +76,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            {["Grabación y Fotografía","Técnico de vídeo broadcast","Proyectos audiovisuales"].map((item, i) => (
+            {["Grabación y Fotografía","Producción para empresas","Técnico broadcast"].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 40 }}
@@ -77,8 +86,8 @@ export default function Home() {
               >
                 <h3 className="text-xl font-medium mb-3">{item}</h3>
                 <p className="text-gray-600">
-                  Servicio profesional enfocado en calidad visual, detalle técnico
-                  y resultados modernos.
+                  Soluciones audiovisuales adaptadas a cada cliente,
+                  con enfoque profesional y estética moderna.
                 </p>
               </motion.div>
             ))}
@@ -101,9 +110,19 @@ export default function Home() {
           </button>
         </form>
 
-        <div className="mt-10 text-gray-600">
+        <div className="mt-10 text-gray-600 space-y-2">
           <p>📞 +34 636 893 279</p>
-          <p>📸 Instagram: mk.audiovisual_</p>
+        <p>
+  📸 Instagram: 
+  <a 
+    href="https://instagram.com/mk.audiovisual_" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="underline ml-1"
+  >
+    @mk.audiovisual_
+  </a>
+</p>
         </div>
       </section>
 
