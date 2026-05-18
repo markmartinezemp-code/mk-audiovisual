@@ -3,86 +3,91 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="bg-white text-black font-sans">
+    <main className="bg-white text-black font-sans overflow-x-hidden">
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
 
-        {/* LOGO FULL BACKGROUND */}
         <motion.img
           src="/logo.jpeg"
           alt="MK Audiovisual logo"
-          initial={{ scale: 1.3, opacity: 0 }}
+          initial={{ scale: 1.4, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.25 }}
-          transition={{ duration: 1.8 }}
+          transition={{ duration: 2 }}
           className="absolute w-full h-full object-cover"
         />
 
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-white/70" />
 
-        {/* TEXTO ENCIMA */}
         <div className="relative z-10 px-6 max-w-2xl">
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="text-4xl md:text-6xl font-semibold tracking-tight"
+            transition={{ delay: 0.5 }}
+            className="text-4xl md:text-6xl font-semibold"
           >
-            Producción audiovisual profesional
+            MK Audiovisual
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 0.9 }}
             className="mt-6 text-lg text-gray-700"
           >
-            Desarrollo proyectos audiovisuales para empresas, marcas y clientes
-            individuales, combinando técnica, estética y narrativa visual.
+            Producción audiovisual profesional para empresas, marcas y contenido digital.
           </motion.p>
 
-          <motion.a
-            href="#contacto"
-            whileHover={{ scale: 1.05 }}
-            className="mt-10 inline-block px-6 py-3 border border-black rounded-full text-sm hover:bg-black hover:text-white transition"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="mt-10 flex justify-center gap-4 flex-wrap"
           >
-            Contactar
-          </motion.a>
+            <a href="#contacto" className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80 transition">
+              Solicitar presupuesto
+            </a>
+            <a href="#portfolio" className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition">
+              Ver trabajos
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* SOBRE MI */}
       <section className="py-24 px-6 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-medium mb-10">Sobre mí</h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
-          Soy operador de cámara, realizador, productor y técnico de vídeo.
-          Trabajo en proyectos audiovisuales tanto en entornos broadcast como
-          en producciones para empresas y contenido digital.
+        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-10">
+          Sobre mí
+        </motion.h2>
 
-          Mi enfoque combina precisión técnica con una estética moderna,
-          adaptándome a cada proyecto para ofrecer resultados profesionales.
-        </p>
+        <motion.p initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-gray-600 text-lg leading-relaxed">
+          Soy operador de cámara, realizador, productor y técnico de vídeo.
+          Trabajo tanto en entornos broadcast como en proyectos audiovisuales para empresas.
+
+          Ayudo a marcas y negocios a mejorar su imagen a través de contenido visual profesional.
+        </motion.p>
       </section>
 
       {/* SERVICIOS */}
       <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium mb-12">Servicios</h2>
+          <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-12">
+            Servicios
+          </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {["Grabación y Fotografía","Producción para empresas","Técnico broadcast"].map((item, i) => (
+            {["Grabación y Fotografía","Producción audiovisual","Técnico broadcast"].map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
-                className="p-6 border rounded-2xl bg-white hover:shadow-xl transition"
+                whileHover={{ y: -10 }}
+                className="p-8 border rounded-2xl bg-white hover:shadow-2xl transition"
               >
-                <h3 className="text-xl font-medium mb-3">{item}</h3>
+                <h3 className="text-xl font-medium mb-4">{item}</h3>
                 <p className="text-gray-600">
-                  Producciones audiovisuales adaptadas a cada cliente con enfoque
-                  profesional y estética actual.
+                  Servicio profesional adaptado a cada cliente con resultados de alto nivel.
                 </p>
               </motion.div>
             ))}
@@ -90,21 +95,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PORTFOLIO */}
+      <section id="portfolio" className="py-24 px-6 max-w-6xl mx-auto">
+        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-12">
+          Portfolio
+        </motion.h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[1,2,3].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: i * 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              className="h-56 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
+            >
+              Proyecto {item}
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* CONTACTO */}
       <section id="contacto" className="py-24 px-6 max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-medium mb-10">Contacto</h2>
+        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-10">
+          Contacto
+        </motion.h2>
 
+        {/* FORMULARIO SEGURO */}
         <form action="https://formspree.io/f/xxxxx" method="POST" className="space-y-6">
           <input type="text" name="name" placeholder="Nombre" required className="w-full p-3 border rounded-lg" />
           <input type="email" name="email" placeholder="Email" required className="w-full p-3 border rounded-lg" />
-          <textarea name="message" placeholder="Mensaje" required className="w-full p-3 border rounded-lg h-32" />
+          <textarea name="message" placeholder="Cuéntame tu proyecto" required className="w-full p-3 border rounded-lg h-32" />
 
-          <button type="submit" className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80 transition">
-            Enviar
+          <button type="submit" className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80 transition w-full">
+            Enviar mensaje
           </button>
         </form>
 
-        <div className="mt-10 text-gray-600 space-y-2">
+        {/* CONTACTO DIRECTO */}
+        <div className="mt-10 text-gray-600 space-y-2 text-center">
           <p>📞 +34 636 893 279</p>
           <p>
             📸 Instagram:
