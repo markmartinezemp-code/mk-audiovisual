@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -6,147 +7,178 @@ export default function Home() {
     <main className="bg-white text-black font-sans overflow-x-hidden">
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center">
 
-        <motion.img
+        {/* Fondo */}
+        <img
           src="/logo.jpeg"
-          alt="MK Audiovisual logo"
-          initial={{ scale: 1.4, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.25 }}
-          transition={{ duration: 2 }}
-          className="absolute w-full h-full object-cover"
+          alt="MK Audiovisual"
+          className="absolute w-full h-full object-cover opacity-20"
         />
 
         <div className="absolute inset-0 bg-white/70" />
 
-        <div className="relative z-10 px-6 max-w-2xl">
+        {/* Contenido HERO */}
+        <div className="relative z-10 text-center px-6 max-w-3xl">
+
           <motion.h1
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-4xl md:text-6xl font-semibold"
+            className="text-5xl md:text-7xl font-semibold"
           >
             MK Audiovisual
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
+            transition={{ delay: 0.2 }}
             className="mt-6 text-lg text-gray-700"
           >
-            Producción audiovisual profesional para empresas, marcas y contenido digital.
+            Operador de cámara · Steadicam · Producción audiovisual
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="mt-10 flex justify-center gap-4 flex-wrap"
-          >
-            <a href="#contacto" className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80 transition">
-              Solicitar presupuesto
-            </a>
-            <a href="#portfolio" className="px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition">
+          <div className="mt-10 flex gap-4 justify-center flex-wrap">
+            <a
+              href="#portfolio"
+              className="px-6 py-3 bg-black text-white rounded-full"
+            >
               Ver trabajos
             </a>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* SOBRE MI */}
-      <section className="py-24 px-6 max-w-5xl mx-auto">
-        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-10">
-          Sobre mí
-        </motion.h2>
-
-        <motion.p initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-gray-600 text-lg leading-relaxed">
-          Soy operador de cámara, realizador, productor y técnico de vídeo.
-          Trabajo tanto en entornos broadcast como en proyectos audiovisuales para empresas.
-
-          Ayudo a marcas y negocios a mejorar su imagen a través de contenido visual profesional.
-        </motion.p>
-      </section>
-
-      {/* SERVICIOS */}
-      <section className="py-24 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-12">
-            Servicios
-          </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {["Grabación y Fotografía","Producción audiovisual","Técnico broadcast"].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                whileHover={{ y: -10 }}
-                className="p-8 border rounded-2xl bg-white hover:shadow-2xl transition"
-              >
-                <h3 className="text-xl font-medium mb-4">{item}</h3>
-                <p className="text-gray-600">
-                  Servicio profesional adaptado a cada cliente con resultados de alto nivel.
-                </p>
-              </motion.div>
-            ))}
+            <a
+              href="#contacto"
+              className="px-6 py-3 border border-black rounded-full"
+            >
+              Contacto
+            </a>
           </div>
         </div>
       </section>
 
+      {/* DEBUG (PRUEBA IMAGEN - IMPORTANTE) */}
+      <section className="py-10 flex justify-center">
+        <img
+          src="/steadycam.jpg"
+          style={{ width: "300px" }}
+          alt="DEBUG STEADYCAM"
+        />
+      </section>
+
+      {/* SOBRE MÍ */}
+      <section className="py-24 px-6 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-semibold mb-8">
+          Sobre mí
+        </h2>
+
+        <p className="text-gray-600 text-lg leading-relaxed">
+          Soy operador de cámara especializado en steadycam, realización y producción audiovisual.
+          Trabajo en eventos, conciertos y proyectos profesionales para marcas y empresas.
+        </p>
+      </section>
+
       {/* PORTFOLIO */}
       <section id="portfolio" className="py-24 px-6 max-w-6xl mx-auto">
-        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-12">
-          Portfolio
-        </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[1,2,3].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              className="h-56 bg-gray-200 rounded-xl flex items-center justify-center text-gray-500"
-            >
-              Proyecto {item}
-            </motion.div>
-          ))}
+        <h2 className="text-4xl font-semibold text-center mb-16">
+          Trabajos destacados
+        </h2>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+
+          {/* STEADYCAM */}
+          <div className="relative rounded-3xl overflow-hidden h-[500px]">
+
+            <img
+              src="/steadycam.jpg"
+              alt="Steadycam"
+              className="w-full h-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-black/40" />
+
+            <div className="absolute bottom-0 p-8 text-white">
+              <h3 className="text-3xl font-semibold">
+                Operador de cámara
+              </h3>
+              <p className="text-gray-200">
+                Steadicam · Eventos · Realización
+              </p>
+            </div>
+
+          </div>
+
+          {/* CATARROJA */}
+          <a
+            href="https://www.instagram.com/p/DOJ9jJijSr6/"
+            target="_blank"
+            className="relative rounded-3xl overflow-hidden h-[500px] block"
+          >
+
+            <img
+              src="/catarroja.jpg"
+              alt="Catarroja"
+              className="w-full h-full object-cover"
+            />
+
+            <div className="absolute inset-0 bg-black/40" />
+
+            <div className="absolute bottom-0 p-8 text-white">
+              <h3 className="text-3xl font-semibold">
+                Proyecto destacado
+              </h3>
+
+              <p className="text-gray-200">
+                Producción audiovisual
+              </p>
+
+              <span className="inline-block mt-4 px-4 py-2 bg-white text-black rounded-full">
+                Ver vídeo
+              </span>
+            </div>
+
+          </a>
+
         </div>
       </section>
 
       {/* CONTACTO */}
       <section id="contacto" className="py-24 px-6 max-w-3xl mx-auto">
-        <motion.h2 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-medium mb-10">
+
+        <h2 className="text-4xl font-semibold mb-10">
           Contacto
-        </motion.h2>
+        </h2>
 
-        {/* FORMULARIO FORMSPREE */}
-        <form action="https://formspree.io/f/mzdwzpjr" method="POST" className="space-y-6">
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web" />
+        <form
+          action="https://formspree.io/f/mzdwzpjr"
+          method="POST"
+          className="space-y-5"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            className="w-full p-4 border rounded-xl"
+          />
 
-          <input type="text" name="name" placeholder="Nombre" required className="w-full p-3 border rounded-lg" />
-          <input type="email" name="email" placeholder="Email" required className="w-full p-3 border rounded-lg" />
-          <textarea name="message" placeholder="Cuéntame tu proyecto" required className="w-full p-3 border rounded-lg h-32" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full p-4 border rounded-xl"
+          />
 
-          <button type="submit" className="px-6 py-3 bg-black text-white rounded-full hover:opacity-80 transition w-full">
-            Enviar mensaje
+          <textarea
+            name="message"
+            placeholder="Mensaje"
+            className="w-full p-4 border rounded-xl h-32"
+          />
+
+          <button className="w-full bg-black text-white py-4 rounded-full">
+            Enviar
           </button>
         </form>
 
-        {/* CONTACTO DIRECTO */}
-        <div className="mt-10 text-gray-600 space-y-2 text-center">
-          <p>📞 +34 636 893 279</p>
-          <p>
-            📸 Instagram:
-            <a href="https://instagram.com/mk.audiovisual_" target="_blank" rel="noopener noreferrer" className="underline ml-1">
-              @mk.audiovisual_
-            </a>
-          </p>
-        </div>
       </section>
 
     </main>
