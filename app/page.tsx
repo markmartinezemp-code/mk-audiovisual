@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Disponibilidad from "@/components/Disponibilidad";
 
 export default function Home() {
   return (
@@ -166,7 +167,8 @@ export default function Home() {
 
         </div>
       </section>
-
+<Disponibilidad />
+{/* CONTACTO */}
       {/* ================= CONTACTO ================= */}
       <section
         id="contacto"
