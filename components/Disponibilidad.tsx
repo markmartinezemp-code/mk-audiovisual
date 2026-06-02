@@ -11,7 +11,7 @@ export default function Disponibilidad() {
         </h2>
 
         <p className="text-center text-gray-600 mb-12">
-          Consulta mis fechas disponibles para nuevos proyectos.
+          Consulta mi disponibilidad actualizada en tiempo real.
         </p>
 
         <div className="flex justify-center gap-8 mb-10 flex-wrap">
