@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Disponibilidad from "@/components/Disponibilidad";
 
 export default function Home() {
   return (
@@ -166,7 +167,13 @@ export default function Home() {
 
         </div>
       </section>
-  
+  <Disponibilidad />
+
+{/* ================= CONTACTO ================= */}
+<section
+  id="contacto"
+  className="py-24 px-6 max-w-3xl mx-auto"
+></section>
 
       {/* ================= CONTACTO ================= */}
       <section
