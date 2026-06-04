@@ -1,11 +1,47 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
+const CALENDAR_ID = "markmartinezemp@gmail.com";
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+
 export default function Disponibilidad() {
+  const [diasOcupados, setDiasOcupados] = useState<string[]>([]);
+
+  useEffect(() => {
+    async function cargarEventos() {
+      const hoy = new Date().toISOString();
+
+      const url =
+        `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(
+          CALENDAR_ID
+        )}/events?key=${API_KEY}&singleEvents=true&orderBy=startTime&timeMin=${hoy}`;
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const fechas =
+        data.items?.map((evento: any) => {
+          const fecha =
+            evento.start?.date ||
+            evento.start?.dateTime?.split("T")[0];
+          return fecha;
+        }) || [];
+
+      setDiasOcupados(fechas);
+    }
+
+    cargarEventos();
+  }, []);
+
   return (
     <section
       id="disponibilidad"
       className="py-24 px-6 bg-[#f8f8f8]"
     >
-      <div className="max-w-6xl mx-auto">
-
+      <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
           Disponibilidad
         </h2>
@@ -14,32 +50,17 @@ export default function Disponibilidad() {
           Consulta mi disponibilidad actualizada en tiempo real.
         </p>
 
-        <div className="flex justify-center gap-8 mb-10 flex-wrap">
+        <Calendar
+          tileClassName={({ date, view }) => {
+            if (view !== "month") return "";
 
-          <div className="flex items-center gap-3">
-            <div className="w-5 h-5 rounded-full bg-green-500"></div>
-            <span>Disponible</span>
-          </div>
+            const fecha = date.toISOString().split("T")[0];
 
-          <div className="flex items-center gap-3">
-            <div className="w-5 h-5 rounded-full bg-red-500"></div>
-            <span>No disponible</span>
-          </div>
-
-        </div>
-
-        <div className="bg-white rounded-3xl overflow-hidden shadow-md border">
-
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=markmartinezemp%40gmail.com&ctz=Europe%2FMadrid"
-            style={{ border: 0 }}
-            width="100%"
-            height="700"
-            loading="lazy"
-          />
-
-        </div>
-
+            return diasOcupados.includes(fecha)
+              ? "ocupado"
+              : "libre";
+          }}
+        />
       </div>
     </section>
   );
