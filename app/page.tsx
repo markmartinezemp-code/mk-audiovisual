@@ -81,7 +81,7 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-600 text-lg leading-relaxed">
-          Soy operador de cámara especializado en steadicam,
+          Soy técnico de vídeo especializado en operador de cámara ,
           realización y producción audiovisual. Trabajo en eventos,
           conciertos y proyectos profesionales para marcas,
           empresas y producciones audiovisuales.
@@ -123,7 +123,7 @@ export default function Home() {
               </h3>
 
               <p className="text-gray-200">
-                Steadicam · Eventos · Realización
+                Operador de cámara · Eventos · Realización
               </p>
             </div>
 
