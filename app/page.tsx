@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mt-6 text-lg md:text-xl text-gray-700"
           >
-            Operador de cámara · Steadicam · Producción audiovisual
+            Operador de cámara · Realizador · Producción audiovisual
           </motion.p>
 
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
