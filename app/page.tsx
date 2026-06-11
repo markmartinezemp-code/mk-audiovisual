@@ -219,11 +219,18 @@ export default function Home() {
           </button>
 
         </form>
+<div className="mt-10 text-center text-gray-600">
+  <p>📞 +34 636 893 279</p>
 
-        <div className="mt-10 text-center text-gray-600">
-          <p>📞 +34 636 893 279</p>
-          <p>📸 @mk.audiovisual_</p>
-        </div>
+  <a
+    href="https://www.instagram.com/mk.audiovisual_/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline"
+  >
+    📸 @mk.audiovisual_
+  </a>
+</div>
 
       </section>
 
