@@ -51,7 +51,7 @@ export default function Home() {
           >
             Operador de cámara · Realizador · Producción audiovisual
           </motion.p>
-
+          
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
 
             <a
