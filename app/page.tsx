@@ -82,9 +82,10 @@ export default function Home() {
 
         <p className="text-gray-600 text-lg leading-relaxed">
           Soy técnico de vídeo especializado en operador de cámara ,
-          realización y producción audiovisual. Trabajo en eventos,
-          conciertos y proyectos profesionales para marcas,
-          empresas y producciones audiovisuales.
+  realización y producción audiovisual. Trabajo en eventos,
+  conciertos y proyectos profesionales para marcas,
+  empresas y producciones audiovisuales.
+      
         </p>
 
       </section>
